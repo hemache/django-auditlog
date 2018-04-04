@@ -16,5 +16,9 @@ class LogEntryAdmin(admin.ModelAdmin, LogEntryAdminMixin):
     ]
     date_hierarchy = 'timestamp'
 
+    def has_add_permission(self, request):
+        # As audit admin doesn't allow log creation from admin
+        return False
+
 
 admin.site.register(LogEntry, LogEntryAdmin)
