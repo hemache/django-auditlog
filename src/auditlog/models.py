@@ -166,9 +166,9 @@ class LogEntry(models.Model):
         DELETE = 2
 
         choices = (
-            (CREATE, _("create")),
-            (UPDATE, _("update")),
-            (DELETE, _("delete")),
+            (CREATE, _('Create')),
+            (UPDATE, _('Update')),
+            (DELETE, _('Delete')),
         )
 
     content_type = models.ForeignKey(to='contenttypes.ContentType', on_delete=models.CASCADE, related_name='+', verbose_name=_("content type"))
